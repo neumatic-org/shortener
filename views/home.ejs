@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Create a URL</title>
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/fomantic-ui@2.7.6/dist/semantic.min.css'><link rel="stylesheet" href="./form.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+
+<script src="https://unpkg.com/@drum-n-bass/kinetics"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+  const kinetics = new Kinetics().interactionHook();
+});
+ </script>
+<div class="ui middle aligned center aligned grid">
+  <div class="column">
+    <div class="ui message blue">
+        <h2><%= appURL.replace('https://', '').replace('http://', '').replace('www.', '') %></h2>
+      </div>
+      <noscript>
+        <div class="ui message red">
+            What the hell are you on, IE 9?
+            You should JavaScript so that this page works properly
+        </div>
+            </noscript>
+    <form class="ui large form" action="/" method="POST">
+      <div class="ui stacked segment purple">
+       
+        <div class="field inverted">
+          <div class="ui input floating-label">
+            <input data-kinetics-attraction type="text" name="url" placeholder="url">
+            <label>Link</label>
+          </div>
+        </div>
+        
+        
+        <div class="field">
+          <div class="ui input floating-label <% if (req.query.force) { %>disabled<% } %>">
+            <input data-kinetics-attraction type="text" name="path" placeholder="path" <% if (req.query.path) { %>value="<%- req.query.path %>"<% } %>>
+            <label>Custom path (optional)</label>
+          </div>
+        </div>
+
+
+
+        <div data-kinetics-attraction id="f" class="ui fluid large purple inverted submit button">Create!</div>
+      </div>
+
+      <div class="ui error message"></div>
+
+    </form>
+
+    <div class="ui message">
+      made by neumatic with semantic ui, kinetics, express, and mongodb :)
+      <br>
+      <div data-kinetics-attraction class="ui primary button" onClick="window.location.href = 'https://github.com/neumatic-org/shortener'">Source code</div>
+      <div data-kinetics-attraction class="ui primary button" onClick="window.location.href = '/app/config'">ShareX Config</div>
+      <div data-kinetics-attraction class="ui primary button" onClick="window.location.href = 'https://github.com/neumatic-org/shortener/#api'">API</div>
+    </div>
+    <div class="ui message blue">
+      <h2>Currently serving <%- db.length %> urls!</h2>
+    </div>
+
+  </div>
+</div>
+
+<script src='https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/fomantic-ui@2.7.6/dist/semantic.min.js'></script>
+<script src="./form.js"></script>
+
+</body>
+</html>

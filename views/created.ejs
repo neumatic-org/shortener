@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>URL created</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/fomantic-ui@2.7.6/dist/semantic.min.css'><link rel="stylesheet" href="./form.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
+
+</head>
+<body onLoad="$('body').toast({ displayTime: 0, class: 'success', message: `Successfully shortened URL!` });$('body').toast({ displayTime: 2000, class: 'info', message: `<div class='ui active blue elastic loader'></div>` })">
+
+  <div class="ui basic modal">
+    <div class="ui icon header">
+      <i class="plus icon"></i>Create a new Short URL</div>
+    <div class="content">
+      
+      <form class="ui large form" action="/" method="POST">
+        <div class="ui stacked segment purple">
+         
+          <div class="field inverted">
+            <div class="ui input floating-label">
+              <input data-kinetics-attraction type="text" name="url" placeholder="url">
+              <label>Link</label>
+            </div>
+          </div>
+          
+          
+          <div class="field">
+            <div class="ui input floating-label">
+              <input data-kinetics-attraction type="text" name="path" placeholder="path">
+              <label>Custom path (optional)</label>
+            </div>
+          </div>
+  
+  
+  
+          <div data-kinetics-attraction id="f" class="ui fluid large purple inverted submit button">Create!</div>
+        </div>
+  
+        <div class="ui error message"></div>
+  
+      </form>
+    </div>
+    <div class="actions">
+      <div class="ui red cancel button">Cancel</div>
+    </div>
+  </div>
+
+<script src="https://unpkg.com/@drum-n-bass/kinetics"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+  const kinetics = new Kinetics().interactionHook();
+});
+
+function s () {
+  $('.ui.modal').modal('show')
+}
+ </script>
+<div class="ui middle aligned center aligned grid">
+  <div class="column">
+
+    <div class="ui message green">
+      <h1>URL created: <%= appURL %>/<%= id %></h1>
+      <br>
+      <br>
+      <a onClick="$('body').toast({ message: `Copied url to clipboard (<%= appURL %>/<%= id %>)` })" data-clipboard-text="<%= appURL %>/<%= id %>" class="ui primary button btn">Copy URL</a>
+      <a onClick="window.location.href = '/app?result=copy_success'" class="ui secondary button btn">Go home</a>
+      <a onClick="s();return false" class="ui yellow button">Create another</a>
+      
+    </div>
+
+  </div>
+</div>
+<script>new ClipboardJS('.btn')</script>
+  <script src='https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/fomantic-ui@2.7.6/dist/semantic.min.js'></script><script  src="./form.modal.js"></script>
+
+</body>
+</html>

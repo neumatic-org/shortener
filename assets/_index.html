@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>request</title>
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/fomantic-ui@2.7.6/dist/semantic.min.css'><link rel="stylesheet" href="./form.css">
+
+</head>
+<body>
+
+<script src="https://unpkg.com/@drum-n-bass/kinetics"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+  const kinetics = new Kinetics().interactionHook();
+});
+ </script>
+<div class="ui middle aligned center aligned grid">
+  <div class="column">
+    <form class="ui large form" action="/" method="POST">
+      <div class="ui stacked segment">
+       
+        <div class="field">
+          <div class="ui input floating-label">
+            <input type="text" name="url" placeholder="url">
+            <label>Link</label>
+          </div>
+        </div>
+        
+        
+        <div class="field">
+          <div class="ui input floating-label">
+            <input type="text" name="path" placeholder="path">
+            <label>Custom path</label>
+          </div>
+        </div>
+
+        <div class="g-recaptcha" data-sitekey="6Lf1bgAcAAAAANW9Iiac1xxPx0hiT5x9HKP8Ytto"></div>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+        <div id="f" class="ui fluid large purple inverted submit button">Request</div>
+      </div>
+
+      <div class="ui error message"></div>
+
+    </form>
+
+    <div class="ui message">
+      made by neumatic with semantic ui, kinetics, express, and mongodb :)
+    </div>
+    <div class="ui message blue">
+      <h5>uioh!</h5>
+    </div>
+
+  </div>
+</div>
+
+  <script src='https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/fomantic-ui@2.7.6/dist/semantic.min.js'></script><script  src="./form.js"></script>
+
+</body>
+</html>
