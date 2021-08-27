@@ -10,7 +10,8 @@ A simple, yet elegant URL shortener app. It uses Mongo to store links and number
 
 3. Edit your env for `MONGO_STR` to be your connection string (from the connect button on mongodb atlas). **If you are on Replit this is required, because code is public, and ENV's are not.**
 
-   ![](https://cdn.neumatic.xyz/r/kstufv7zu9a)
+![image](https://user-images.githubusercontent.com/86504963/131072924-cf2be4df-bd7b-482b-a6cf-c5d9b510baa3.png)
+
 
 4. Edit config.js to your preferences
 
