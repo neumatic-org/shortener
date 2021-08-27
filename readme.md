@@ -1,4 +1,4 @@
-# Neumatic url shortener
+# [Neumatic url shortener](https://s.neumatic.xyz)
 
 A simple, yet elegant URL shortener app. It uses Mongo to store links and numbers of clicks, and can be run on Heroku or [Replit](https://repl.it/github/neumatic-org/shortener) for free. 
 
