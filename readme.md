@@ -30,3 +30,4 @@ There is currently only 1 endpoint, and that is to create urls. Be warned, this 
 url: The url to create
 
 path: Custom path for your url (optional)
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https%3A%2F%2Fgithub.com%2Fneumatic-org%2Fshortener&plugins=mongodb&referralCode=neumatic)
