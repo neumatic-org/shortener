@@ -3,7 +3,7 @@ const links = require('./db')
 const { appURL, port } = require('./config')
 
 function generate(l) {
-    var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var possible = 'abcdefghijklmnopqrstuvwxyz0123456789';
     var result = '';
   for (var i = 0; i < 5; i++)
     result += possible.charAt(Math.floor(Math.random() * possible.length));
@@ -117,6 +117,8 @@ app.get('/app/created', async (req, res) => {
 app.get('/:id?', async (req, res) => {
   const url = await links.findOne({ code: req.params.id })
   if (!url) return res.render('404.ejs', { id: req.params.id, appURL: appURL })
+
+  if (req.query.amp) return res.redirect(url.link)
   res.render('link.ejs', { link: url.link })
 
   url.clicks = url.clicks + 1
