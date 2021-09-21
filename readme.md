@@ -31,3 +31,19 @@ There is currently only 1 endpoint, and that is to create urls. Be warned, this 
 url: The url to create
 
 path: Custom path for your url (optional)
+
+### Response
+##### Success
+```json
+{
+    "success": true,
+    "url": ":responseUrl"
+}
+```
+##### Error - missing url field
+```json
+{
+    "success": false,
+    "message": "Malformed request."
+}
+```
