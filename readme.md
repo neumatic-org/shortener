@@ -22,6 +22,8 @@ port: The port to listen on. On heroku, change it to process.env.PORT
 mongoConnectionStr: Read step 2-3, do NOT put your connection string here if on replit.
 ```
 
+# add `?amp=1` to instantly redirect the url
+
 # API
 
 There is currently only 1 endpoint, and that is to create urls. Be warned, this does not come with ratelimiting, or a way to delete urls.
